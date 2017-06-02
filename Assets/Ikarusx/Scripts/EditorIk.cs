@@ -14,6 +14,8 @@ public class EditorIk : MonoBehaviour {
     public GameObject platformButton;
     public GameObject editorCanvas;
 
+    public float timer = 120f;
+
     public eState currentState;
 
     // Use this for initialization
@@ -50,6 +52,11 @@ public class EditorIk : MonoBehaviour {
             editorCanvas.SetActive(true);
             mLevelPrefab.TogglePlay(false);
         }
+    }
+
+    public void StartLevel()
+    {
+        mLevelPrefab.DrawHUD(timer);
     }
 
     void createLevel()

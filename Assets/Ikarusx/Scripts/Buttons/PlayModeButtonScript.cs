@@ -1,0 +1,37 @@
+﻿using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System.Collections;
+
+public class PlayModeButtonScript : MonoBehaviour
+    , IPointerClickHandler
+    , IPointerEnterHandler
+    , IPointerExitHandler
+{
+
+    public Text label;
+    public GameObject editor;
+
+	// Use this for initialization
+	void Start () {
+	
+	}
+	
+	// Update is called once per frame
+	void Update () {
+
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        editor.GetComponent<EditorIk>().ChangeState();
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+    }
+}

@@ -23,5 +23,11 @@ public class HUDScript : MonoBehaviour {
     void FixedUpdate()
     {
         timer -= Time.deltaTime;
+
+        if (timer < 0)
+        {
+            // die
+            timer = 0;
+        }
     }
 }
