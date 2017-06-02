@@ -6,7 +6,7 @@ public class PlayerControllerIk : MonoBehaviour
     public float speed = 4f;
     public float jumpforce = 100f;
 
-    public bool canMove;
+    private static bool canMove;
 
     // Use this for initialization
     void Start()
@@ -35,9 +35,9 @@ public class PlayerControllerIk : MonoBehaviour
         }
     }
 
-    public void toggleMove()
+    public void ToggleMove()
     {
-        canMove = !canMove;print("test " + canMove);
+        canMove = !canMove;
     }
 
     void Move()

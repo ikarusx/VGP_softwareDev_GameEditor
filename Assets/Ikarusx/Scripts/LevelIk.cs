@@ -4,7 +4,7 @@ using System.Collections;
 [System.Serializable]
 public class LevelIk : MonoBehaviour {
 
-    public HUDScript mHUD;
+    public static HUDScript mHUD;
     public PlayerControllerIk playerController;
 
     // Use this for initialization
@@ -13,7 +13,11 @@ public class LevelIk : MonoBehaviour {
         {
             playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerIk>();
         }
-	}
+        if (!mHUD)
+        {
+            mHUD = transform.FindChild("HUDCanvas").gameObject.GetComponent<HUDScript>();
+        }
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -21,6 +25,10 @@ public class LevelIk : MonoBehaviour {
         if (!playerController)
         {
             playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerIk>();
+        }
+        if (!mHUD)
+        {
+            mHUD = transform.FindChild("HUDCanvas").gameObject.GetComponent<HUDScript>();
         }
     }
 
@@ -33,19 +41,13 @@ public class LevelIk : MonoBehaviour {
     {
         if (play)
         {
-            playerController.toggleMove();
+            playerController.ToggleMove();
             mHUD.gameObject.SetActive(true);
-            print(mHUD.gameObject.name);
-            print(mHUD.gameObject.activeInHierarchy);
-            print(mHUD.gameObject.activeSelf);
         }
         else
         {
-            playerController.toggleMove();
+            playerController.ToggleMove();
             mHUD.gameObject.SetActive(false);
-            print(mHUD.gameObject.name);
-            print(mHUD.gameObject.activeInHierarchy);
-            print(mHUD.gameObject.activeSelf);
         }
     }
 }

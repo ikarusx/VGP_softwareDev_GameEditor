@@ -24,7 +24,9 @@ public class EditModeButtonScript : MonoBehaviour
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        print("click edit");
         editor.GetComponent<EditorIk>().ChangeState();
+        //transform.parent.gameObject.SetActive(false);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
