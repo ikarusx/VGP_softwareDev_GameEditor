@@ -3,7 +3,9 @@ using System.Collections;
 
 [System.Serializable]
 public class LevelIk : MonoBehaviour {
-    public Hud mHud;
+
+    public HUDScript mHUD;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -13,4 +15,18 @@ public class LevelIk : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void TogglePlay(bool play)
+    {
+        if (play)
+        {
+            mHUD.gameObject.SetActive(true);
+        }
+        else
+        {
+            mHUD.gameObject.SetActive(false);
+            print(mHUD.gameObject.activeInHierarchy);
+            print(mHUD.gameObject.activeSelf);
+        }
+    }
 }

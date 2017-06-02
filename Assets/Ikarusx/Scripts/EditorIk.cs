@@ -3,16 +3,24 @@ using UnityEngine.EventSystems;
 using System.Collections;
 
 public class EditorIk : MonoBehaviour {
+    public enum eState
+    {
+        EDITING,
+        PLAYING
+    }
 
     public LevelIk mLevelPrefab;
 
     public GameObject platformButton;
+    public GameObject editorCanvas;
+
+    public eState currentState;
 
     // Use this for initialization
     void Start ()
     {
-	    
-	}
+        currentState = eState.EDITING;
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -26,9 +34,22 @@ public class EditorIk : MonoBehaviour {
         //}
     }
 
-    public void ClickPlatform()
+    public void ChangeState()
     {
-        //print("lol");
+        if (currentState == eState.EDITING)
+        {
+            currentState = eState.PLAYING;
+
+            editorCanvas.SetActive(false);
+            mLevelPrefab.TogglePlay(true);
+        }
+        else
+        {
+            currentState = eState.EDITING;
+
+            editorCanvas.SetActive(true);
+            mLevelPrefab.TogglePlay(false);
+        }
     }
 
     void createLevel()
