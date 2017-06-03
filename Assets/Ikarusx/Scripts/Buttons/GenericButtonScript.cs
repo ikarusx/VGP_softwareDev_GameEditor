@@ -28,7 +28,11 @@ public class GenericButtonScript : MonoBehaviour
     public void OnBeginDrag(PointerEventData ped)
     {
         CreateObject();
-        currentObj.GetComponent<Rigidbody2D>().gravityScale = 0;
+
+        if (currentObj.GetComponent<Rigidbody2D>())
+        {
+            currentObj.GetComponent<Rigidbody2D>().gravityScale = 0;
+        }
     }
 
     public void OnDrag(PointerEventData ped)
@@ -40,7 +44,10 @@ public class GenericButtonScript : MonoBehaviour
     public void OnEndDrag(PointerEventData ped)
     {
         //print("Drag ends");
-        currentObj.GetComponent<Rigidbody2D>().gravityScale = 1;
+        if (currentObj.GetComponent<Rigidbody2D>())
+        {
+            currentObj.GetComponent<Rigidbody2D>().gravityScale = 1;
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)

@@ -20,7 +20,7 @@ public class MoveCameraIk : MonoBehaviour
         if (isPlaying)
         {
             Vector3 position = transform.position;
-            position.x = player.transform.position.x + 6;
+            position.x = player.transform.position.x;// + 6;
 
             transform.position = Vector3.Lerp(transform.position, position, Time.deltaTime);
             //transform.position = position;

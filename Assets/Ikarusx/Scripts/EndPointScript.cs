@@ -30,6 +30,6 @@ public class EndPointScript : MonoBehaviour
         //if (OnCollisionEvent != null)
         //    OnCollisionEvent.Invoke();
 
-        SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene("LevelComplete");
     }
 }
