@@ -124,7 +124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &431620
 Transform:
   m_ObjectHideFlags: 1
@@ -319,7 +319,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3521691f488df964ca2468230145a639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mHUD: {fileID: 11473166}
   playerController: {fileID: 11489844}
 --- !u!114 &11470958
 MonoBehaviour:
@@ -396,7 +395,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   jumpforce: 100
-  canMove: 1
 --- !u!114 &11499012
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -24,7 +24,6 @@ public class PlayModeButtonScript : MonoBehaviour
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        print("click play");
         editor.GetComponent<EditorIk>().ChangeState();
         //transform.parent.gameObject.SetActive(false);
     }

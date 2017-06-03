@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System;
 using System.Collections;
 
@@ -28,6 +29,8 @@ public class HUDScript : MonoBehaviour {
         {
             // die
             timer = 0;
+
+            SceneManager.LoadScene("GameOver");
         }
     }
 }

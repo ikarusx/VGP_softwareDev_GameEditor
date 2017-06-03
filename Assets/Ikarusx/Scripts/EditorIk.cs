@@ -10,6 +10,7 @@ public class EditorIk : MonoBehaviour {
     }
 
     public LevelIk mLevelPrefab;
+    public MoveCameraIk moveCamera;
 
     public GameObject platformButton;
     public GameObject editorCanvas;
@@ -42,6 +43,7 @@ public class EditorIk : MonoBehaviour {
         {
             currentState = eState.PLAYING;
 
+            moveCamera.isPlaying = true;
             editorCanvas.SetActive(false);
             mLevelPrefab.TogglePlay(true);
         }
@@ -49,6 +51,7 @@ public class EditorIk : MonoBehaviour {
         {
             currentState = eState.EDITING;
 
+            moveCamera.isPlaying = false;
             editorCanvas.SetActive(true);
             mLevelPrefab.TogglePlay(false);
         }
