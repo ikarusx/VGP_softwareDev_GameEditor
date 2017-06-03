@@ -1,13 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class EndPointScript : MonoBehaviour
 {
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-
-    }
-
     // Use this for initialization
     void Start()
     {
@@ -23,4 +19,17 @@ public class EndPointScript : MonoBehaviour
     }
 
 
+
+    void OnTriggerEnter2D(Collider2D thing)
+    {
+        Debug.Log("collider tag = " + thing.gameObject.tag);
+
+        if (thing.gameObject.tag != "Player")
+            return;
+        //if (invoked) return;
+        //if (OnCollisionEvent != null)
+        //    OnCollisionEvent.Invoke();
+
+        SceneManager.LoadScene("GameOver");
+    }
 }

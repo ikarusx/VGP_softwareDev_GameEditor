@@ -14,15 +14,17 @@ public class DragIk : MonoBehaviour
         distance = Camera.main.WorldToScreenPoint(transform.position);
         posx = Input.mousePosition.x - distance.x;
         posy = Input.mousePosition.y - distance.y;
-
     }
 
     public void OnMouseDrag()
     {
-        Vector3 currentpos = new Vector3(Input.mousePosition.x - posx, Input.mousePosition.y - posy, 0);
-        Vector3 worldpos = Camera.main.ScreenToWorldPoint(currentpos);
-        worldpos.z = 0;
-        transform.position = worldpos;
+        if (EditorIk.Instance.currentState == EditorIk.eState.EDITING)
+        {
+            Vector3 currentpos = new Vector3(Input.mousePosition.x - posx, Input.mousePosition.y - posy, 0);
+            Vector3 worldpos = Camera.main.ScreenToWorldPoint(currentpos);
+            worldpos.z = 0;
+            transform.position = worldpos;
+        }
     }
 
     // Use this for initialization

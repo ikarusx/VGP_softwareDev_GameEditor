@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerControllerIk : MonoBehaviour
+public class PlayerControllerIk_fxversion : MonoBehaviour
 {
     public float speed = 4f;
     public float jumpforce = 100f;

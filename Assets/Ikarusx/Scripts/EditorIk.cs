@@ -3,6 +3,9 @@ using UnityEngine.EventSystems;
 using System.Collections;
 
 public class EditorIk : MonoBehaviour {
+
+    public static EditorIk Instance;
+
     public enum eState
     {
         EDITING,
@@ -22,6 +25,7 @@ public class EditorIk : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        Instance = this;
         currentState = eState.EDITING;
     }
 	
