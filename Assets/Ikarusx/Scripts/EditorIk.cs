@@ -16,7 +16,8 @@ public class EditorIk : MonoBehaviour {
     public MoveCameraIk moveCamera;
 
     public GameObject platformButton;
-    public GameObject editorCanvas;
+    public GameObject edittingCanvas;
+    public GameObject playingCanvas;
 
     public float timer = 120f;
 
@@ -48,7 +49,8 @@ public class EditorIk : MonoBehaviour {
             currentState = eState.PLAYING;
 
             moveCamera.isPlaying = true;
-            editorCanvas.SetActive(false);
+            edittingCanvas.SetActive(false);
+            playingCanvas.SetActive(true);
             mLevelPrefab.TogglePlay(true);
         }
         else
@@ -56,7 +58,8 @@ public class EditorIk : MonoBehaviour {
             currentState = eState.EDITING;
 
             moveCamera.isPlaying = false;
-            editorCanvas.SetActive(true);
+            edittingCanvas.SetActive(true);
+            playingCanvas.SetActive(false);
             mLevelPrefab.TogglePlay(false);
         }
     }

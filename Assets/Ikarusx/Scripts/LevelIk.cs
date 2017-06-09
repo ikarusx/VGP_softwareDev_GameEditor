@@ -5,8 +5,9 @@ using System.Collections;
 public class LevelIk : MonoBehaviour {
 
     public static HUDScript mHUD;
-    public PlayerControllerIk playerController;
-    public EndPointScript endPointScript;
+    public static PlayerControllerIk playerController;
+    public static StartPointScript startPointScript;
+    public static EndPointScript endPointScript;
 
     // Use this for initialization
     void Start () {
@@ -17,6 +18,10 @@ public class LevelIk : MonoBehaviour {
         if (!playerController)
         {
             playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerIk>();
+        }
+        if (!startPointScript)
+        {
+            startPointScript = GameObject.FindGameObjectWithTag("Start").GetComponent<StartPointScript>();
         }
         if (!endPointScript)
         {
@@ -35,6 +40,10 @@ public class LevelIk : MonoBehaviour {
         {
             playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerIk>();
         }
+        if (!startPointScript)
+        {
+            startPointScript = GameObject.FindGameObjectWithTag("Start").GetComponent<StartPointScript>();
+        }
         if (!endPointScript)
         {
             endPointScript = GameObject.FindGameObjectWithTag("End").GetComponent<EndPointScript>();
@@ -52,6 +61,7 @@ public class LevelIk : MonoBehaviour {
         {
             mHUD.gameObject.SetActive(true);
             playerController.ToggleMove();
+            startPointScript.SpawnPlayer();
             endPointScript.ToggleEdit();
         }
         else

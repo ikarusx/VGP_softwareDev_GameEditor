@@ -8,7 +8,7 @@ public class PlayerControllerIk : MonoBehaviour
 
     public LayerMask whatIsGround;
     public Transform groundcheck;
-    
+
     private static bool grounded = false;
     private const float groundradius = 0.2f;
     private static bool canMove;
@@ -16,11 +16,16 @@ public class PlayerControllerIk : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        grounded = false;
         canMove = false;
     }
 
     void Update()
     {
+        if (!groundcheck)
+        {
+            groundcheck = transform.GetChild(0);
+        }
         if (canMove)
         {
             //GetComponent<Rigidbody2D>().AddForce(new Vector3(speed, 0) * horiz);
@@ -35,7 +40,7 @@ public class PlayerControllerIk : MonoBehaviour
     void FixedUpdate()
     {
         grounded = Physics2D.OverlapCircle(groundcheck.position, groundradius, whatIsGround);
-        
+
         if (canMove)
         {
             Move();

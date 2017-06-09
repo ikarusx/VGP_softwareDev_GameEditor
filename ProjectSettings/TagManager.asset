@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Level
   - PlatformContainer
+  - Start
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Platform
   - End
   - Player
-  - 
+  - Start
   - 
   - 
   - 
