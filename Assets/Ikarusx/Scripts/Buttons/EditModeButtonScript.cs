@@ -10,7 +10,6 @@ public class EditModeButtonScript : MonoBehaviour
 {
 
     public Text label;
-    public GameObject editor;
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +23,7 @@ public class EditModeButtonScript : MonoBehaviour
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        editor.GetComponent<EditorIk>().ChangeState();
+        EditorIk.Instance.GetComponent<EditorIk>().ChangeState();
         //transform.parent.gameObject.SetActive(false);
     }
 

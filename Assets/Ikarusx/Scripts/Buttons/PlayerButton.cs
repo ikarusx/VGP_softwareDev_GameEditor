@@ -14,6 +14,7 @@ public class PlayerButton : MonoBehaviour
     public GameObject player;
 
     private GameObject currentObj;
+    private string parentTag = "Level";
     
 	void Start () {
 	
@@ -27,6 +28,7 @@ public class PlayerButton : MonoBehaviour
     {
         CreateObject();
         currentObj.GetComponent<Rigidbody2D>().gravityScale = 0;
+        currentObj.GetComponent<CircleCollider2D>().enabled = false;
     }
 
     public void OnDrag(PointerEventData ped)
@@ -38,6 +40,7 @@ public class PlayerButton : MonoBehaviour
     {
         //print("Drag ends");
         currentObj.GetComponent<Rigidbody2D>().gravityScale = 1;
+        currentObj.GetComponent<CircleCollider2D>().enabled = true;
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -64,6 +67,13 @@ public class PlayerButton : MonoBehaviour
             objPos.z = 0;
 
             currentObj = (GameObject)Instantiate(player, objPos, Quaternion.identity);
+
+            GameObject parent = GameObject.FindGameObjectWithTag(parentTag);
+
+            if (parent)
+            {
+                currentObj.transform.parent = parent.transform;
+            }
         }
     }
 }

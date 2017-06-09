@@ -6,29 +6,38 @@ public class LevelIk : MonoBehaviour {
 
     public static HUDScript mHUD;
     public PlayerControllerIk playerController;
+    public EndPointScript endPointScript;
 
     // Use this for initialization
     void Start () {
-	    if (!playerController)
-        {
-            playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerIk>();
-        }
         if (!mHUD)
         {
             mHUD = transform.FindChild("HUDCanvas").gameObject.GetComponent<HUDScript>();
+        }
+        if (!playerController)
+        {
+            playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerIk>();
+        }
+        if (!endPointScript)
+        {
+            endPointScript = GameObject.FindGameObjectWithTag("End").GetComponent<EndPointScript>();
         }
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
+        if (!mHUD)
+        {
+            mHUD = transform.FindChild("HUDCanvas").gameObject.GetComponent<HUDScript>();
+        }
         if (!playerController)
         {
             playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerIk>();
         }
-        if (!mHUD)
+        if (!endPointScript)
         {
-            mHUD = transform.FindChild("HUDCanvas").gameObject.GetComponent<HUDScript>();
+            endPointScript = GameObject.FindGameObjectWithTag("End").GetComponent<EndPointScript>();
         }
     }
 
@@ -41,13 +50,15 @@ public class LevelIk : MonoBehaviour {
     {
         if (play)
         {
-            playerController.ToggleMove();
             mHUD.gameObject.SetActive(true);
+            playerController.ToggleMove();
+            endPointScript.ToggleEdit();
         }
         else
         {
-            playerController.ToggleMove();
             mHUD.gameObject.SetActive(false);
+            playerController.ToggleMove();
+            endPointScript.ToggleEdit();
         }
     }
 }

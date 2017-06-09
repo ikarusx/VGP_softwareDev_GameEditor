@@ -14,32 +14,34 @@ Platform assembly: D:\UNI\VGP_softwareDev_GameEditor\testBuild02_Data\Managed\Un
 Loading D:\UNI\VGP_softwareDev_GameEditor\testBuild02_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: D:\UNI\VGP_softwareDev_GameEditor\testBuild02_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading D:\UNI\VGP_softwareDev_GameEditor\testBuild02_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.057 seconds
+Platform assembly: D:\UNI\VGP_softwareDev_GameEditor\testBuild02_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\UNI\VGP_softwareDev_GameEditor\testBuild02_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\UNI\VGP_softwareDev_GameEditor\testBuild02_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\UNI\VGP_softwareDev_GameEditor\testBuild02_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.169 seconds
 Platform assembly: D:\UNI\VGP_softwareDev_GameEditor\testBuild02_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\UNI\VGP_softwareDev_GameEditor\testBuild02_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 59Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.634298 ms
+UnloadTime: 0.420518 ms
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.414870 ms
+UnloadTime: 4.060318 ms
 
 Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 582.
-Total: 0.438407 ms (FindLiveObjects: 0.062168 ms CreateObjectMapping: 0.044280 ms MarkObjects: 0.321987 ms  DeleteObjects: 0.009383 ms)
+Total: 0.284451 ms (FindLiveObjects: 0.025805 ms CreateObjectMapping: 0.015835 ms MarkObjects: 0.234598 ms  DeleteObjects: 0.007917 ms)
 
-collider tag = Untagged
+collider tag = Player
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-collider tag = Untagged
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.489138 ms
 
-collider tag = Untagged
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 573.
+Total: 0.434301 ms (FindLiveObjects: 0.048386 ms CreateObjectMapping: 0.039588 ms MarkObjects: 0.342221 ms  DeleteObjects: 0.003518 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 2508 -> priority: 1 
-  Thread -> id: 3868 -> priority: 1 
+  Thread -> id: 156c -> priority: 1 
+  Thread -> id: 2438 -> priority: 1 

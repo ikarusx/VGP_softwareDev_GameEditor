@@ -10,10 +10,17 @@ public class GenericButtonScript : MonoBehaviour
     , IPointerEnterHandler
     , IPointerExitHandler
 {
+    public enum TYPES : int
+    {
+        Platform = 0,
+        AI = 1
+    }
 
     public GameObject prefab;
+    public TYPES type;
 
     private GameObject currentObj;
+    private string[] names = new []{ "PlatformContainer", "AIContainer" };
 
 	// Use this for initialization
 	void Start () {
@@ -33,6 +40,14 @@ public class GenericButtonScript : MonoBehaviour
         {
             currentObj.GetComponent<Rigidbody2D>().gravityScale = 0;
         }
+        if (currentObj.GetComponent<BoxCollider2D>())
+        {
+            currentObj.GetComponent<BoxCollider2D>().enabled = false;
+        }
+        if (currentObj.GetComponent<CircleCollider2D>())
+        {
+            currentObj.GetComponent<CircleCollider2D>().enabled = false;
+        }
     }
 
     public void OnDrag(PointerEventData ped)
@@ -47,6 +62,14 @@ public class GenericButtonScript : MonoBehaviour
         if (currentObj.GetComponent<Rigidbody2D>())
         {
             currentObj.GetComponent<Rigidbody2D>().gravityScale = 1;
+        }
+        if (currentObj.GetComponent<BoxCollider2D>())
+        {
+            currentObj.GetComponent<BoxCollider2D>().enabled = true;
+        }
+        if (currentObj.GetComponent<CircleCollider2D>())
+        {
+            currentObj.GetComponent<CircleCollider2D>().enabled = true;
         }
     }
 
@@ -70,5 +93,12 @@ public class GenericButtonScript : MonoBehaviour
         objPos.z = 0;
 
         currentObj = (GameObject)Instantiate(prefab, objPos, Quaternion.identity);
+
+        GameObject parent = GameObject.Find(names[(int)type]);
+
+        if (parent)
+        {
+            currentObj.transform.parent = parent.transform;
+        }
     }
 }
