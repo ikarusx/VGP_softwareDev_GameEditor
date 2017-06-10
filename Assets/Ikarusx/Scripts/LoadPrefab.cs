@@ -34,6 +34,7 @@ public class LoadPrefab : MonoBehaviour
         level = go;
         SaveScript.level = go;
         GameObject newplayer = go.transform.Find("Player").gameObject;
+
         if(newplayer != null)
         {
             print("Found new player");

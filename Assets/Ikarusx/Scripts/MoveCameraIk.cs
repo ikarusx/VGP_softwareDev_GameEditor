@@ -3,8 +3,7 @@ using System.Collections;
 
 public class MoveCameraIk : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject player;
+    public GameObject player;
 
     public float speed = 4f;
     public bool isPlaying;
