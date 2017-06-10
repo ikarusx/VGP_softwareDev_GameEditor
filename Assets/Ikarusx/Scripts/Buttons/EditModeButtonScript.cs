@@ -30,7 +30,7 @@ public class EditModeButtonScript : MonoBehaviour
     public void OnPointerClick(PointerEventData eventData)
     {
         SaveButton.SetActive(false);
-        SaveButton.SetActive(false);
+        LoadButton.SetActive(false);
         EditorIk.Instance.GetComponent<EditorIk>().ChangeState();
         //transform.parent.gameObject.SetActive(false);
     }

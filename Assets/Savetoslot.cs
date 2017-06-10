@@ -2,8 +2,9 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+#if UNITY_EDITOR
 using UnityEditor;
-
+#endif
 public class Savetoslot : MonoBehaviour
     , IPointerClickHandler
     , IPointerEnterHandler
@@ -32,13 +33,14 @@ public class Savetoslot : MonoBehaviour
 
     void Save()
     {
-        if(saveslot.transform.GetChild(0) == gameObject.transform)
+#if UNITY_EDITOR
+        if (saveslot.transform.GetChild(0) == gameObject.transform)
             PrefabUtility.CreatePrefab("Assets/Resources/Slot1.prefab", level);
         else if (saveslot.transform.GetChild(1) == gameObject.transform)
             PrefabUtility.CreatePrefab("Assets/Resources/Slot2.prefab", level);
         else if (saveslot.transform.GetChild(2) == gameObject.transform)
             PrefabUtility.CreatePrefab("Assets/Resources/Slot3.prefab", level);
-
+#endif
         saveslot.SetActive(false);
 
         //Need to load main menu

@@ -2,8 +2,9 @@
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
-using UnityEditor;
-
+#if UNITY_EDITOR
+//using UnityEditor;
+#endif
 public class LoadPrefab : MonoBehaviour
     , IPointerClickHandler
     , IPointerEnterHandler

@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
-using UnityEditor;
+//using UnityEditor;
 
 public class SavePrefab : MonoBehaviour
     , IPointerClickHandler

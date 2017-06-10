@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using UnityEditor;
+//using UnityEditor;
 
 public class Loadtoslot : MonoBehaviour
     , IPointerClickHandler
