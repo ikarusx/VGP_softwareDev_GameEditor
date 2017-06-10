@@ -11,12 +11,16 @@ public class SavePrefab : MonoBehaviour
 {
     [SerializeField]
     private GameObject SaveSlot;
+    [SerializeField]
+    private GameObject LoadSlot;
+
     void Start()
     {
     }
 
     void Save()
     {
+        LoadSlot.SetActive(false);
         SaveSlot.SetActive(true);
         SaveSlot.transform.GetChild(3).GetComponent<Text>().text = "Choose a save slot";
         object prefab1 = Resources.Load("Slot1");

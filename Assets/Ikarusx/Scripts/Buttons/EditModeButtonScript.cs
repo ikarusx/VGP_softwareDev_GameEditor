@@ -11,8 +11,14 @@ public class EditModeButtonScript : MonoBehaviour
 
     public Text label;
 
-	// Use this for initialization
-	void Start () {
+    [SerializeField]
+    private GameObject SaveButton;
+    [SerializeField]
+    private GameObject LoadButton;
+
+
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
@@ -23,6 +29,8 @@ public class EditModeButtonScript : MonoBehaviour
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        SaveButton.SetActive(false);
+        SaveButton.SetActive(false);
         EditorIk.Instance.GetComponent<EditorIk>().ChangeState();
         //transform.parent.gameObject.SetActive(false);
     }

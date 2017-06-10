@@ -1289,6 +1289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SaveSlot: {fileID: 750153361}
+  LoadSlot: {fileID: 2049394351}
 --- !u!1 &607568460 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 150754, guid: 01b07e743e6034044a27da40703a4566, type: 2}
@@ -5440,6 +5441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadSlot: {fileID: 273226782}
+  SaveSlot: {fileID: 496143981}
 --- !u!1 &2068040251
 GameObject:
   m_ObjectHideFlags: 0
@@ -5490,6 +5492,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: {fileID: 0}
+  SaveButton: {fileID: 496143981}
+  LoadButton: {fileID: 2049394351}
 --- !u!114 &2068040254
 MonoBehaviour:
   m_ObjectHideFlags: 0

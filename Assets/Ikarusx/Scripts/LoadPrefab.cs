@@ -13,6 +13,9 @@ public class LoadPrefab : MonoBehaviour
     [SerializeField]
     private GameObject LoadSlot;
 
+    [SerializeField]
+    private GameObject SaveSlot;
+
 
     void Start()
     {
@@ -36,6 +39,7 @@ public class LoadPrefab : MonoBehaviour
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        SaveSlot.SetActive(false);
         LoadSlot.SetActive(true);
         LoadSlot.transform.GetChild(3).GetComponent<Text>().text = "Choose a load slot";
         object prefab1 = Resources.Load("Slot1");
