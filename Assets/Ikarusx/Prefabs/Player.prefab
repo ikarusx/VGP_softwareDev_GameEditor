@@ -8,11 +8,12 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 462344}
-  - 212: {fileID: 21285208}
   - 50: {fileID: 5005942}
   - 114: {fileID: 11401384}
   - 114: {fileID: 11491924}
   - 58: {fileID: 5838618}
+  - 212: {fileID: 21209002}
+  - 95: {fileID: 9571306}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -108,6 +109,23 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!95 &9571306
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119822}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3aa5ac7e574159a429751498ec1e3f79, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11401384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ad2c5283cda464284b939fefb64983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!212 &21285208
+--- !u!212 &21209002
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -162,8 +180,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9e361f46f3a868f48b49183cdecc0870, type: 3}
-  m_Color: {r: 0.16933392, g: 0.6266438, b: 0.85294116, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 582c4c97cfe82c743ba34b2d2dd291f9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!1001 &100100000
