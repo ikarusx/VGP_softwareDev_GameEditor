@@ -9,43 +9,55 @@ public class LoadPrefab : MonoBehaviour
     , IPointerEnterHandler
     , IPointerExitHandler
 {
-    public GameObject SaveFunction;
-    public GameObject CameraFunction;
-    public GameObject level;
 
-    private SavePrefab SaveScript;
-    private MoveCameraIk CameraScript;
+    [SerializeField]
+    private GameObject LoadSlot;
 
-    void Awake()
-    {
-        SaveScript = SaveFunction.GetComponent<SavePrefab>();
-        CameraScript = CameraFunction.GetComponent<MoveCameraIk>();
-    }
 
     void Start()
     {
 
     }
 
-    void Load()
-    {
-        Destroy(level);
-        GameObject go = Instantiate(Resources.Load("Level",  typeof(GameObject))) as GameObject;
-        level = go;
-        SaveScript.level = go;
-        GameObject newplayer = go.transform.Find("Player").gameObject;
+    //void Load()
+    //{
+    //    Destroy(level);
+    //    GameObject go = Instantiate(Resources.Load("Level",  typeof(GameObject))) as GameObject;
+    //    level = go;
+    //    SaveScript.level = go;
+    //    GameObject newplayer = go.transform.Find("Player").gameObject;
 
-        if(newplayer != null)
-        {
-            print("Found new player");
-            CameraScript.player = newplayer;
-        }
-    }
+    //    if(newplayer != null)
+    //    {
+    //        print("Found new player");
+    //        CameraScript.player = newplayer;
+    //    }
+    //}
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        LoadSlot.SetActive(true);
+        LoadSlot.transform.GetChild(3).GetComponent<Text>().text = "Choose a load slot";
+        object prefab1 = Resources.Load("Slot1");
+        object prefab2 = Resources.Load("Slot2");
+        object prefab3 = Resources.Load("Slot3");
+        LoadSlot.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "Slot 1";
+        LoadSlot.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Slot 2";
+        LoadSlot.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = "Slot 3";
+        if (prefab1 == null)
+        {
+            LoadSlot.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "Empty slot";
+        }
+        if (prefab2 == null)
+        {
+            LoadSlot.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Empty slot";
+        }
+        if (prefab3 == null)
+        {
+            LoadSlot.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = "Empty slot";
+        }
         print("click load");
-        Load();
+        //Load();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
