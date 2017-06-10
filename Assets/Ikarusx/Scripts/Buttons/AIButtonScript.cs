@@ -2,7 +2,7 @@
 using UnityEngine.EventSystems;
 using System.Collections;
 
-public class GenericButtonScript : MonoBehaviour
+public class AIButtonScript : MonoBehaviour
     , IPointerClickHandler
     , IBeginDragHandler
     , IDragHandler
@@ -10,17 +10,11 @@ public class GenericButtonScript : MonoBehaviour
     , IPointerEnterHandler
     , IPointerExitHandler
 {
-    public enum TYPES : int
-    {
-        Platform = 0,
-        AI = 1
-    }
-
     public GameObject prefab;
-    public TYPES type;
+    public AIScript.Pattern pattern;
 
     private GameObject currentObj;
-    private string[] names = new []{ "PlatformContainer", "AIContainer" };
+    private string parentName = "AIContainer";
     private float gravityScale;
 
 	// Use this for initialization
@@ -73,6 +67,7 @@ public class GenericButtonScript : MonoBehaviour
         {
             currentObj.GetComponent<CircleCollider2D>().enabled = true;
         }
+        currentObj.GetComponent<AIScript>().SetPattern(pattern);
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -96,7 +91,7 @@ public class GenericButtonScript : MonoBehaviour
 
         currentObj = (GameObject)Instantiate(prefab, objPos, Quaternion.identity);
 
-        GameObject parent = GameObject.Find(names[(int)type]);
+        GameObject parent = GameObject.Find(parentName);
 
         if (parent)
         {

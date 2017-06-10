@@ -1062,7 +1062,7 @@ CircleCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150754}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1480,7 +1480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pattern: 0
   speed: 4
-  jumpforce: 100
+  verticalMultiplier: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256

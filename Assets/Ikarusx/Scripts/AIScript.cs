@@ -11,7 +11,7 @@ public class AIScript : MonoBehaviour
     public Pattern pattern = Pattern.HORIZONTAL;
 
     public float speed = 4f;
-    public float jumpforce = 100f;
+    public float verticalMultiplier = 2f;
 
     public LayerMask whatIsGround;
     public Transform groundLeft;
@@ -22,9 +22,9 @@ public class AIScript : MonoBehaviour
     private const float groundradius = 0.2f;
     private static bool canMove;
     
-    private float directionX = 0;
-    private float directionY = 0;
-    private int counter = 0;
+    private float directionX = 0f;
+    private float directionY = 0f;
+    private float counter = 0;
 
     private Rigidbody2D myRigidBody2D;
 
@@ -65,11 +65,11 @@ public class AIScript : MonoBehaviour
             {
                 myRigidBody2D.gravityScale = 0;
                 directionX = 0;
-                directionY = directionY == 0 ? -1 : directionY;
+                directionY = directionY == 0 ? 1 : directionY;
 
                 ++counter;
 
-                if (counter >= 30)
+                if (counter >= 30f * verticalMultiplier)
                 {
                     counter = 0;
                     directionY *= -1;
@@ -106,6 +106,19 @@ public class AIScript : MonoBehaviour
     public void ToggleMove()
     {
         canMove = !canMove;
+    }
+
+    public void SetPattern(Pattern pat)
+    {
+        if (pat == Pattern.HORIZONTAL)
+        {
+            GetComponent<Rigidbody2D>().gravityScale = 1;
+        }
+        else if (pat == Pattern.VERTICAL)
+        {
+            GetComponent<Rigidbody2D>().gravityScale = 0;
+        }
+        pattern = pat;
     }
 
     void Move()

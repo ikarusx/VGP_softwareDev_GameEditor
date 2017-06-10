@@ -15,6 +15,7 @@ public class EndPointButtonScript : MonoBehaviour
 
     private GameObject currentObj;
     private string parentTag = "Level";
+    private float gravityScale;
 
     void Start () {
 	
@@ -27,6 +28,7 @@ public class EndPointButtonScript : MonoBehaviour
     public void OnBeginDrag(PointerEventData ped)
     {
         CreateObject();
+        gravityScale = currentObj.GetComponent<Rigidbody2D>().gravityScale;
         currentObj.GetComponent<Rigidbody2D>().gravityScale = 0;
         currentObj.GetComponent<BoxCollider2D>().enabled = false;
         currentObj.GetComponent<CircleCollider2D>().enabled = false;
@@ -40,7 +42,7 @@ public class EndPointButtonScript : MonoBehaviour
     public void OnEndDrag(PointerEventData ped)
     {
         //print("Drag ends");
-        currentObj.GetComponent<Rigidbody2D>().gravityScale = 1;
+        currentObj.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
         currentObj.GetComponent<BoxCollider2D>().enabled = true;
         currentObj.GetComponent<CircleCollider2D>().enabled = true;
     }

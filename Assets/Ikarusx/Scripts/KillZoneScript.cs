@@ -22,7 +22,7 @@ public class KillZoneScript : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
         }
-        if (collision.tag == "Enemy")
+        if (collision.tag == "Enemy" || collision.tag == "Start")
         {
             Destroy(collision.gameObject);
         }
