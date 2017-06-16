@@ -29,6 +29,7 @@ public class GarbagePointerScript : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && EventSystem.current.IsPointerOverGameObject())
         {
+            print(EventSystem.current.currentSelectedGameObject.name);
             if (EditorIk.Instance.draggedObject)
             {
                 grow = true;
