@@ -22,9 +22,22 @@ public class DragIk : MonoBehaviour
         {
             Vector3 currentpos = new Vector3(Input.mousePosition.x - posx, Input.mousePosition.y - posy, 0);
             Vector3 worldpos = Camera.main.ScreenToWorldPoint(currentpos);
+
             worldpos.z = 0;
             transform.position = worldpos;
+
+            EditorIk.Instance.draggedObject = gameObject;
         }
+    }
+
+    public void OnMouseUp()
+    {
+        Invoke("ResetDragged", 0.3f);
+    }
+
+    void ResetDragged()
+    {
+        EditorIk.Instance.draggedObject = null;
     }
 
     // Use this for initialization

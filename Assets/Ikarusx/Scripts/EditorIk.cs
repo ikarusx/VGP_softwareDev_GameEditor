@@ -19,6 +19,8 @@ public class EditorIk : MonoBehaviour {
     public GameObject edittingCanvas;
     public GameObject playingCanvas;
 
+    public GameObject draggedObject = null;
+
     public float timer = 120f;
 
     public eState currentState;
