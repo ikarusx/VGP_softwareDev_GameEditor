@@ -1514,6 +1514,10 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 11432622, guid: 01b07e743e6034044a27da40703a4566, type: 2}
+      propertyPath: Editor
+      value: 
+      objectReference: {fileID: 934626971}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01b07e743e6034044a27da40703a4566, type: 2}
   m_IsPrefabParent: 0
@@ -2112,7 +2116,7 @@ GameObject:
   - 114: {fileID: 934626973}
   m_Layer: 0
   m_Name: Editor
-  m_TagString: Untagged
+  m_TagString: Editor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

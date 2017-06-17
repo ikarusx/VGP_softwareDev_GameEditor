@@ -27,17 +27,20 @@ public class AIScript : MonoBehaviour
     private float counter = 0;
 
     private Rigidbody2D myRigidBody2D;
+    private SpriteRenderer spriteRenderer;
 
     // Use this for initialization
     void Start()
     {
         myRigidBody2D = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         canMove = false;
     }
 
     void Update()
     {
     }
+    
 
     // Update is called once per frame
     void FixedUpdate()
@@ -58,6 +61,7 @@ public class AIScript : MonoBehaviour
                 {
                     directionX = -1;
                 }
+                Flip();
 
                 Move();
             }
@@ -79,7 +83,12 @@ public class AIScript : MonoBehaviour
             }
         }
     }
-    
+
+    private void Flip()
+    {
+        spriteRenderer.flipX = directionX == -1;
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (EditorIk.Instance.currentState == EditorIk.eState.PLAYING)
