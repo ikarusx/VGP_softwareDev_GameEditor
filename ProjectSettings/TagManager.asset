@@ -10,6 +10,7 @@ TagManager:
   - Level
   - PlatformContainer
   - Start
+  - Editor
   layers:
   - Default
   - TransparentFX

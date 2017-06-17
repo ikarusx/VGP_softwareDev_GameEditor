@@ -5,24 +5,30 @@ using System.Collections;
 public class EndPointScript : MonoBehaviour
 {
     public static bool isEditting = true;
+    public GameObject Editor; 
+
 
     // Use this for initialization
     void Start()
     {
+        Editor = GameObject.FindGameObjectWithTag("Editor");
     }
 
     public void FixedUpdate()
     {
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
     }
 
     void OnTriggerEnter2D(Collider2D thing)
     {
-        if (!isEditting)
+        Editor = GameObject.FindGameObjectWithTag("Editor");
+        if (Editor.GetComponent<EditorIk>().currentState == EditorIk.eState.PLAYING)
         {
             Debug.Log("collider tag = " + thing.gameObject.tag);
 
