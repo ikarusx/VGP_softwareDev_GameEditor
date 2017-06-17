@@ -12,10 +12,15 @@ public class PlayerControllerIk : MonoBehaviour
     private static bool grounded = false;
     private const float groundradius = 0.2f;
     private static bool canMove;
+    private bool movingRight = true;
+
+    private Animator myAnimator;
 
     // Use this for initialization
     void Start()
     {
+        myAnimator = GetComponent<Animator>();    
+
         grounded = false;
         canMove = false;
     }
@@ -57,5 +62,21 @@ public class PlayerControllerIk : MonoBehaviour
         float horiz = Input.GetAxisRaw("Horizontal");
 
         transform.position += (new Vector3(horiz, 0)) * Time.deltaTime * speed;
+
+        if (horiz == 0)
+        {
+            myAnimator.SetBool("isWalking", false);
+        }
+        else
+        {
+            myAnimator.SetBool("isWalking", true);
+        }
+
+        if ((movingRight && horiz < 0) ||
+            (!movingRight && horiz > 0))
+        {
+            movingRight = !movingRight;
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        }
     }
 }
