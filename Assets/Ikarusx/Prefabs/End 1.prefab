@@ -15,7 +15,7 @@ GameObject:
   - 50: {fileID: 5026360}
   - 114: {fileID: 11454694}
   m_Layer: 0
-  m_Name: End
+  m_Name: End 1
   m_TagString: End
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad9d3065b4c2e042a3d839eaff8f976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Editor: {fileID: 0}
 --- !u!212 &21207610
 SpriteRenderer:
   m_ObjectHideFlags: 1

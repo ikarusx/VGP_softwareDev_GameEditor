@@ -22,7 +22,7 @@ public class RestartButtonScript : MonoBehaviour
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        SceneManager.LoadScene("Second1");
+        SceneManager.LoadScene(SceneManager.GetSceneAt(1).name);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
