@@ -9,6 +9,7 @@ public class StartButtonScript : MonoBehaviour
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        SceneManager.LoadScene(SceneManager.GetSceneAt(1).name);
+        //SceneManager.LoadScene(SceneManager.GetSceneAt(1).name);
+        SceneManager.LoadScene("Second1");
     }
 }
